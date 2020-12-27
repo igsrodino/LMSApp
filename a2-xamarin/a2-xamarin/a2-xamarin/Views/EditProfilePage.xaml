@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.EditProfilePage"
+             Title="{Binding TitleEditProfile}">
+    <ContentPage.Content>
+        <StackLayout Padding="10,20,10,20"
+                     BackgroundColor="#F1F8E9">
+            <Label Text="Edit Profile Information"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"
+                FontSize="22"
+                FontAttributes="Bold"
+                Margin="5"/>
+                <Grid>
+                    <Button Text="Upload"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="Center"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     WidthRequest = "80" 
+                     HeightRequest = "40"
+                     Margin="0"
+                     BorderColor="#558B2F"
+                     BackgroundColor="Gray"
+ />
+                <Image Source="https://i.imgur.com/PvGLASJ.png"
+                     HeightRequest="100"
+                     WidthRequest="100"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center"
+                     Grid.Row="0"
+                     Grid.Column="1"/>
+            </Grid>
+
+                <Entry Text="{Binding Name}"
+                 Placeholder="Name"
+                 Margin="2"
+                 FontSize="16"/>
+
+                <Entry Text="{Binding DOB}"
+                 Placeholder="Date of Birth"
+                 Margin="2"
+                 FontSize="16"
+                 Keyboard="Numeric"/>
+
+                <Entry Text="{Binding Organisation}"
+                 Placeholder="Organisation"
+                 Margin="2"
+                 FontSize="16"/>
+
+                <Entry Text="{Binding PostalAddress}"
+                 Placeholder="Postal Address"
+                 Margin="2"
+                 FontSize="16"/>
+
+                <Entry Text="{Binding EmailAddress}"
+                 Placeholder="Email Address"
+                 Margin="2"
+                 FontSize="16"/>
+
+                <Entry Text="{Binding PhoneNumber}"
+                 Placeholder="Phone Number"
+                 Margin="2"
+                 FontSize="16"
+                 Keyboard="Numeric"/>
+
+                <Grid>
+                    <Button Text="Confirm"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand"
+                Command="{Binding ButtonProfileConfirm}"
+                Grid.Row="0"
+                Grid.Column="1"
+                WidthRequest = "175"
+                HeightRequest = "50"/>
+
+                    <Button Text="Cancel"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="StartAndExpand"
+                Command="{Binding ButtonProfileCancel}"
+                Grid.Row="0"
+                Grid.Column="0"
+                WidthRequest = "175"
+                HeightRequest = "50"/>
+                </Grid>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

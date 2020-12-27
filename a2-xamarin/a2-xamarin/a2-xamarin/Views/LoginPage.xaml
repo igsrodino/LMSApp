@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="a2_xamarin.Views.LoginPage"
+             xmlns:vm="clr-namespace:a2_xamarin.ViewModels"
+             BackgroundColor="White"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="{Binding LoginText}" 
+                    TextColor="#424242" 
+                    FontSize="50" 
+                    HorizontalTextAlignment="Center"
+                    Margin="0,25,0,25" />
+                <Entry Placeholder="{Binding EmailPlaceholder}" 
+                    PlaceholderColor="#E0E0E0" 
+                    BackgroundColor="#BDBDBD"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,0,0,10"
+                    HeightRequest="40" />
+                <Entry Placeholder="{Binding PasswordPlaceholder}" 
+                    IsPassword="True"
+                    PlaceholderColor="#E0E0E0" 
+                    BackgroundColor="#BDBDBD"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,0,0,10"
+                    HeightRequest="40" />
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Text="{Binding SubmitText}"
+                    FontSize="Large"
+                    HeightRequest="75"
+                    Margin="0,0,0,10"
+                    BackgroundColor="Gray"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand" 
+                    Command="{Binding SendToMain}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content> 
+</ContentPage>

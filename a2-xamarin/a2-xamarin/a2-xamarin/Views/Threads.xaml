@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.Threads" >
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10, 10, 10, 40">
+                <Frame 
+                    BackgroundColor="#ECEFF1"
+                    CornerRadius="5" 
+                    Padding = "8" 
+                    HasShadow="false" 
+                    Margin="0,0,0,10">
+                    <StackLayout Orientation="Horizontal"
+                        Grid.Row="1">
+                        <StackLayout>
+                            <Image Source="{Binding ThisDiscussion.DiscussionOwnerAvatarURL}"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                WidthRequest="100" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding ThisDiscussion.DiscussionOwner}"
+                                TextColor="#616161"
+                                FontSize="15" 
+                                FontAttributes="Bold" />
+                            <BoxView Color="#616161"
+                                HeightRequest="2"
+                                HorizontalOptions="Fill" />
+                            <Label Text="{Binding ThisDiscussion.DiscussionDesc}" 
+                                TextColor="#616161"
+                                FontSize="13"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame                 
+                    CornerRadius="5" 
+                    HasShadow="false" 
+                    BackgroundColor="#ECEFF1">
+                    <StackLayout>
+                        <Label Text="Comments"
+                            TextColor="#616161"
+                            FontSize="15" />
+                        <BoxView Color="#616161"
+                            HeightRequest="2"
+                            HorizontalOptions="Fill" />
+                        <StackLayout 
+                            Padding="0,10,0,10"
+                            BindableLayout.ItemsSource="{Binding Comments}" >
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout>
+                                            <Image Source="{Binding CommentOwnerAvatarURL}"
+                                                    VerticalOptions="FillAndExpand"
+                                                    HorizontalOptions="FillAndExpand" 
+                                                    WidthRequest="50" />
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label Text="{Binding CommentOwner}"
+                                                    TextColor="#616161"
+                                                    FontSize="13" 
+                                                    FontAttributes="Bold" />
+                                            <Label Text="{Binding CommentText}" 
+                                                    TextColor="#616161"
+                                                    FontSize="11"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <StackLayout x:Name="addComment">
+                            <Button Text="Add Comment"
+                                FontSize="13"
+                                Clicked="OnAddCommentClicked" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

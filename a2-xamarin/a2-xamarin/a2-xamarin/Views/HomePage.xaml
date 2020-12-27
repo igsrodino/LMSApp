@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.HomePage"
+             xmlns:vm="clr-namespace:a2_xamarin.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="White" >
+
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10"
+                BindableLayout.ItemsSource="{Binding Courses}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame 
+                            BackgroundColor="#ECEFF1"
+                            CornerRadius="5" 
+                            Padding = "8" 
+                            HasShadow="false" 
+                            Margin="0,0,0,10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OnCourseTapped}" CommandParameter="{Binding CourseID}" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Image Source="{Binding ImageURL}"
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand" 
+                                        WidthRequest="100" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="{Binding CourseName}"
+                                        TextColor="#616161"
+                                        FontSize="20"
+                                        FontAttributes="Bold" />
+                                    <BoxView Color="#616161"
+                                        HeightRequest="2"
+                                        HorizontalOptions="Fill" />
+                                    <Label Text="{Binding CourseDesc}"
+                                        TextColor="#616161" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

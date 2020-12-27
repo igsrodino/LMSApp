@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.ProfilePage"
+             Title="{Binding TitleProfile}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,20,10,20">
+                <StackLayout
+                    BackgroundColor="#F1F8E9">
+                    <Grid>
+                        <Label Text="Profile Info"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        Margin="6"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        />
+                        <Button Text="Sign Out"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding ButtonSignOut}"
+                        WidthRequest = "100"
+                        HeightRequest = "50"
+                        Margin="5"
+                        Grid.Column="2"
+                        Grid.Row="0"/>
+                    </Grid>
+
+                    <Image Source="https://i.imgur.com/PvGLASJ.png"
+                     HeightRequest="100"
+                     WidthRequest="100"
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand"/>
+
+                    <Label Text="{Binding DisplayName, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+                    <Label Text="{Binding DisplayDOB, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+
+                    <Label Text="{Binding DisplayOrganisation, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+                    <Label Text="{Binding DisplayPostalAddress, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+                    <Label Text="{Binding DisplayEmailAddress, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+                    <Label Text="{Binding DisplayPhoneNumber, Mode=TwoWay}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"/>
+
+                    <Button Text="Edit Profile"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Start"
+                        Command="{Binding ButtonEditProfile}"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        WidthRequest = "175"
+                        HeightRequest = "50"
+                        Margin="5"/>
+                </StackLayout>
+
+                <Label Text="{Binding UnitTitle}"
+                     VerticalOptions="Start" 
+                     HorizontalOptions="Start"
+                     FontSize="22"
+                     FontAttributes="Bold"
+                     Margin="5"/>
+
+                <StackLayout
+                    BackgroundColor="#F1F8E9">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding SemesterStatus}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"
+                        Grid.Row="0"
+                        Grid.Column="0"/>
+
+                        <Label Text="{Binding CurrentSemester}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="5"
+                        Grid.Row="0"
+                        Grid.Column="1"/>
+
+                    </Grid>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Null} "
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="None"
+                        Margin="8"
+                        Grid.Row="0"
+                        Grid.Column="0"/>
+
+                        <Label Text="{Binding A1}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="0"
+                        Grid.Column="1"/>
+
+                        <Label Text="{Binding A2}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="0"
+                        Grid.Column="2"/>
+
+                        <Label Text="{Binding A3}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="0"
+                        Grid.Column="3"/>
+
+                        <Label Text="{Binding Unit1}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="1"
+                        Grid.Column="0"/>
+
+                        <Label Text="{Binding Unit2}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="2"
+                        Grid.Column="0"/>
+
+                        <Label Text="{Binding Unit3}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="3"
+                        Grid.Column="0"/>
+
+                        <Label Text="{Binding Unit4}"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Margin="8"
+                        Grid.Row="4"
+                        Grid.Column="0"/>
+
+                        <CheckBox x:Name="cbr1c1" 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr1c2" 
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr1c3" 
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr2c1" 
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr2c2" 
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr2c3" 
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr3c1" 
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr3c2" 
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr3c3" 
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr4c1" 
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr4c2" 
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Color="#558B2F"/>
+
+                        <CheckBox x:Name="cbr4c3" 
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        Color="#558B2F"/>
+                    </Grid>
+                </StackLayout>
+
+                <Grid>
+                    <Button Text="My Grades"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Command="{Binding ButtonMyGrades}"
+                    WidthRequest = "175"
+                    HeightRequest = "50"
+                    Margin="5"
+                    Grid.Column="0"
+                    Grid.Row="0"/>
+
+                    <Button Text="My Calendar"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Command="{Binding ButtonMyCalendar}"
+                    WidthRequest = "175"
+                    HeightRequest = "50"
+                    Margin="5"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.StartPage"
+             xmlns:vm="clr-namespace:a2_xamarin.ViewModels"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:StartViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image Source="{Binding ImageURL}"
+                Margin="20,0,0,0"
+                Aspect="AspectFill" />
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Text="{Binding SignInText}"
+                    FontSize="Large"
+                    HeightRequest="75"
+                    Margin="0,0,0,10"
+                    BackgroundColor="Gray"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding SendToLogOrReg}" 
+                    CommandParameter="True" />
+                
+                <Button Text="{Binding JoinNowText}"
+                    FontSize="Large"
+                    HeightRequest="75"
+                    Margin="0,0,0,10"
+                    BackgroundColor="Gray"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding SendToLogOrReg}" 
+                    CommandParameter="False" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

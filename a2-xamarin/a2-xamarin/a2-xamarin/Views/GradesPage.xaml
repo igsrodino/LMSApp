@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.GradesPage"
+             Title="{Binding TitleGrades}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,20,10,20">
+                <Grid>
+                    <Label Text="{Binding UnitTitle}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    Margin="5"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+
+                    <Label Text="{Binding Unit1Grades}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="None"
+                    Margin="0"
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+
+                    <Label Text="{Binding Unit2Grades}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="None"
+                    Margin="0"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+
+                    <Label Text="{Binding Unit3Grades}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="None"
+                    Margin="0"
+                    Grid.Row="1"
+                    Grid.Column="2"/>
+
+                    <Label Text="{Binding Unit4Grades}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="None"
+                    Margin="0"
+                    Grid.Row="1"
+                    Grid.Column="3"/>
+                </Grid>
+
+                <StackLayout
+                BackgroundColor="#F1F8E9">
+
+                    <Label Text="{Binding Assessment1}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentTitle}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentWorth}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentAchieved}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentMark}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+                </StackLayout>
+                
+                <StackLayout
+                BackgroundColor="White">
+
+                    <Label Text="{Binding Assessment2}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentTitle}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentWorth}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentAchieved}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentMark}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+                </StackLayout>
+                <StackLayout
+                BackgroundColor="#F1F8E9">
+
+                    <Label Text="{Binding Assessment3}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentTitle}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+
+                    <Label Text="{Binding AssessmentWorth}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentAchieved}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+
+                    <Label Text="{Binding AssessmentMark}"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    FontAttributes="None"
+                    Margin="5"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

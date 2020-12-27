@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.Discussions"
+             xmlns:controls ="clr-namespace:a2_xamarin.Controls"
+             BackgroundColor="White"
+             Title="{Binding DiscussionName}" >
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10"                
+                BindableLayout.ItemsSource="{Binding Discussions}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            BackgroundColor="#ECEFF1"
+                            CornerRadius="5" 
+                            Padding = "10" 
+                            HasShadow="false" 
+                            Margin="0,0,0,10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToThreads}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Label Text="{Binding DiscussionOwner}"
+                                    TextColor="#616161"
+                                    FontSize="18"
+                                    FontAttributes="Bold" />
+                                <BoxView Color="White"
+                                    HeightRequest="2"
+                                    HorizontalOptions="Fill" />
+                                <Label Text="{Binding DiscussionDesc}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+    <Shell.SearchHandler>
+        <controls:DiscussionsSearchHandler Placeholder="Enter search term"
+                                           ShowsResults="true"
+                                           DisplayMemberName="DiscussionOwner" />
+    </Shell.SearchHandler>
+
+
+</ContentPage>

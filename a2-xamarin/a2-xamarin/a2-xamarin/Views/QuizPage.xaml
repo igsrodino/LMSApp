@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="a2_xamarin.Views.QuizPage"
+             xmlns:local="clr-namespace:a2_xamarin.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <local:QuizViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="10">
+            <Label Text="Quiz 1 - Week 1"
+                   FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                   Margin="0, 10, 0, 10"/>
+
+            <Label Text="Graded - Yes (5%)"
+                   FontSize="24"
+                FontAttributes="Bold" />
+
+            <!-- ListView for displaying the list of questions -->
+            <StackLayout>
+                <ListView x:Name="QuestionsList"
+                    ItemsSource="{Binding Questions}" 
+                          HasUnevenRows="True">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="0, 0, 0, 5" HasShadow="false" CornerRadius="5" BackgroundColor="#F1F8E9">
+                                    <StackLayout>
+                                        <Label Text="{Binding QuestionNumber, StringFormat='Question {0}'}" FontSize="24" FontAttributes="Bold"/>
+                                        <Label Text="{Binding QuestionText}" />
+                                        <RadioButton Text="True" CheckedChanged="OnQuestionOptionChanged" GroupName="{Binding QuestionNumber}"/>
+                                        <RadioButton Text="False" CheckedChanged="OnQuestionOptionChanged" GroupName="{Binding QuestionNumber}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <Button Text="Submit Answers"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="End"
+                Clicked="OnButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
